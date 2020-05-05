@@ -5,17 +5,19 @@
  */
 
 require('./bootstrap');
-require('mdbvue');
+
+import '../sass/bulma_variables.scss';
+
+require('@fortawesome/fontawesome-free/js/all');
+
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+import 'bulma/bulma.sass';
+
+import 'bulma-block-list/docs/demo.css';
 
 window.Vue = require('vue');
 
-
-import 'mdbvue/lib/css/mdb.min.css'
-
-import * as mdbvue from 'mdbvue'
-for (const component in mdbvue) {
-  Vue.component(component, mdbvue[component])
-}
 
 /**
  * The following block of code may be used to automatically register your

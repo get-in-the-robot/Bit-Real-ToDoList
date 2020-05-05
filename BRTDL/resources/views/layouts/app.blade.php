@@ -20,44 +20,73 @@
 
 <body>
     <div id="app">
-        <mdb-navbar color="stylish-color-dark" dark>
-            <mdb-navbar-brand tag="a" href="/">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <span class="navbar-item" href="/">
                 Bit;Real | ToDoList
-            </mdb-navbar-brand>
-            <mdb-navbar-toggler>
-                <mdb-navbar-nav right>
-
+              </span>
+          
+              <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+          
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item" href="/">
+                  Hlavní stránka
+                </a>
+          
+              <a class="navbar-item" href="{{ route('news') }}">
+                  Novinky
+                </a>
+          
+                
+              </div>
+          
+              <div class="navbar-end">
+                <div class="navbar-item">
                     @if (Route::has('login'))
                     @auth
-                        <mdb-nav-item href="/NewProject">Přidat projekt</mdb-nav-item>
-                        <mdb-dropdown tag="li" class="nav-item">
-                            <mdb-dropdown-toggle tag="a" navLink slot="toggle" waves-fixed class="py-2 z-depth-0 w-auto"
-                            style="font-size: 0.9rem; text-transform: initial;">{{ Auth::user()->name }} </mdb-dropdown-toggle>
-                            <mdb-dropdown-menu>
-                              <mdb-dropdown-item><a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                              document.getElementById('logout-form').submit();">
-                                 {{ __('Odhlásit se') }}
-                             </a>
-
-                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                 @csrf
-                             </form></mdb-dropdown-item>
-                            </mdb-dropdown-menu>
-                          </mdb-dropdown>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                        <div id="avatar" class="mr-2" style="background-image: url('{{ Auth::user()->avatar }}');">  </div> 
+                            <span> {{ Auth::user()->name }}</span>
+                        </a>
+                
+                        <div class="navbar-dropdown">
+                          <a href="/NewProject" class="navbar-item">Nový projekt</a>
+                          <a class="navbar-item" href="{{ route('logout') }}"onclick="event.preventDefault();
+                          document.getElementById('logout-form').submit();">
+                                {{ __('Odhlásit se') }}
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                          </a>
+                          
+                          
+                        </div>
+                      </div>
                     @else
-                        <mdb-nav-item href="{{ route('login') }}">Přihlásit</mdb-nav-item>
-
-                        @if (Route::has('register'))
-                            <mdb-nav-item href="{{ route('register') }}">Registrace</mdb-nav-item>
-                        @endif
+                        <div class="buttons">
+                        <a class="button is-primary"  href="{{ route('register') }}">
+                          <strong>Registrace</strong>
+                        </a>
+                        <a class="button is-light"  href="{{ route('login') }}">
+                          Přihlásit
+                        </a>
+                      </div>
                     @endauth
-            @endif
-                    
-                </mdb-navbar-nav>
-            </mdb-navbar-toggler>
-        </mdb-navbar>
-        <div class="dashboard m-3">
+                    @endif
+                  
+                </div>
+              </div>
+            </div>
+          </nav>
+        
+        <div class="dashboard p-3">
                 @yield('content')
             
         </div>

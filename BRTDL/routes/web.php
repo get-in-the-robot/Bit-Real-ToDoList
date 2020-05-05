@@ -38,3 +38,5 @@ Route::post('/NewTask', 'TaskController@create');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/news', 'HomeController@news')->name('news');

@@ -2,22 +2,60 @@
 
 @section('content')
 
-<mdb-card>
-    <mdb-card-body>
-        <form method="POST" action="/project/{{ $project->id }}/edit">
-            @csrf
-            @method('PATCH')
-        <p class="h4 text-center py-4">Nový projekt</p>
-        <div class="grey-text">
-        <mdb-input label="Název" value="{{ $project->name }}" name="name" group type="text" validate error="wrong" success="right"/>
-          <mdb-input label="Popisek" value="{{ $project->description }}" name="description" group type="text" validate error="wrong" success="right"/>
-          <mdb-input label="Obrázek" value="{{ $project->image }}" name="image" group type="text" validate error="wrong" success="right"/>
+<div class="card">
+  <div class="card-content">
+    <p class="title" style="text-align: center">
+      Upravit projekt
+    </p>
+    <form method="POST" action="/project/{{ $project->id }}/edit">
+      @csrf
+      @method('PATCH')
+  <div class="grey-text">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Název</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
+            <input class="input" name="name" type="text" placeholder="Normal input" value="{{ $project->name }}">
+          </p>
         </div>
-        <div class="text-center py-4 mt-3">
-          <mdb-btn color="cyan" type="submit">Uložit změny</mdb-btn>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Popisek</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
+            <input class="input" value="{{ $project->description }}" name="description" type="text" placeholder="Normal input">
+          </p>
         </div>
-      </form>
-    </mdb-card-body>
-  </mdb-card>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Obrázek</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
+            <input class="input" value="{{ $project->image }}" name="image" type="text" placeholder="Normal input">
+          </p>
+        </div>
+      </div>
+    </div>
+
+    
+  <div class="text-center py-4 mt-3">
+    <button class="button is-success" type="submit">Uložit změny</button>
+  </div>
+</form>
+
+</div>
 
 @endsection

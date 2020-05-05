@@ -2,24 +2,47 @@
 
 @section('content')
 
+  @foreach ($user->projects->chunk(4) as $projects4)
 
-                
+  <div class="columns">
 
-                <mdb-row class="m-3">
-                  @foreach ($user->projects as $project)
-                  <mdb-col col="sm-3"><mdb-card>
-                    <mdb-card-image src="{{ $project->image }}" alt="Card image cap"></mdb-card-image>
-                    <mdb-card-body>
-                      <mdb-card-title>{{ $project->name }}</mdb-card-title>
-                      <mdb-card-text>{{ $project->descs }}</mdb-card-text>
-                      <mdb-btn color="primary" tag="a" href="/project/{{ $project->id }}">Zobrazit projekt</mdb-btn>
-                    </mdb-card-body>
-                  </mdb-card></mdb-col>
+    @foreach ($projects4 as $project)
+  <div class="column is-one-quarter">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img style="width: 360px; height: 250px; background-image: url('{{ $project->image }}');
+          background-size: cover;
+          background-repeat: no-repeat;">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media m-0">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+              
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4">{{ $project->name }}</p>
+            <p class="subtitle is-6">{{ $project->created_at }}</p>
+          </div>
+        </div>
 
-                @endforeach
+        <div class="content">
+          
+        </div>
+      </div>
+      <a class="button is-outlined" href="/project/{{ $project->id }}">Zobrazit projekt</a>
+    </div>
+  </div>
 
-                  
-                </mdb-row>
-            
 
-                @endsection
+  @endforeach
+
+</div>
+
+  @endforeach
+
+  @endsection
