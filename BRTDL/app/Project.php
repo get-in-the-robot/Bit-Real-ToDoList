@@ -8,7 +8,7 @@ use App\User;
 class Project extends Model
 {
     protected $fillable = [
-        'name', 'description', 'image', 'color', 'public', 'symbol', 'user'
+        'name', 'description', 'image', 'color', 'public', 'simage', 'user', 'font_color'
     ];
 
     public function User(){

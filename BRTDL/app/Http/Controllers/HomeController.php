@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Project;
 
 class HomeController extends Controller
 {
@@ -38,14 +39,16 @@ class HomeController extends Controller
 
     public function home(){
         
+        
 
         if(Auth::guest())
         
             return view('index');
 
         else{
+            $user = User::where('id', Auth::id())->get()->first();
             return view('index', [
-                'user' => User::where('id', Auth::id())->get()->first()
+                'projects' => Project::orderBy('favorite', 'desc')->latest()->get()
             ]);
         }
     }
@@ -53,6 +56,17 @@ class HomeController extends Controller
     public function news(){
         return view('news');
     } 
+
+
+    public function settings(){
+        return view('Settings');
+    }
+
+    public function avatar(User $user, Request $request){
+        $user->avatar = $request->avatar;
+        $user->save();
+        return redirect('/settings');
+    }
 
     
 }

@@ -3,35 +3,42 @@
 @section('content')
 
 
-<div class="card">
-    <div class="columns">
-        <div class="column is-half">
-            <div class="card">
+<div class="card"  style="background-color: #f7efef">
+    <div class="columns mb-0">
+        <div class="column is-half pb-0">
+        <div class="card" style="background-color: {{ $project->color }};">
                 <div class="card-image">
                     <figure class="image is-4by3">
                         <img style="width: 100%; height: 550px; background-image: url('{{ $project->image }}');
                         background-size: cover;
-                        background-repeat: no-repeat;">
+                        background-repeat: no-repeat; cursor: pointer"
+                         data-toggle="modal" data-target="#exampleModal">
                     </figure>
                 </div>
-                <div class="card-content">
+                <div class="card-content" >
                     <div class="media">
-                        <div class="media-content">
-                            <p class="title is-4">{{ $project->name }}</p>
-                            <p class="subtitle is-6">{{ $project->updated_at }}</p>
+                        <div class="media-left">
+                            <figure class="image is-48x48 ">
+                              <img  class="projectsimage" style="background-image: url('{{ $project->simage }}'); height: 100%;">
+                              
+                            </figure>
+                          </div>
+                        <div class="media-content" >
+                            <p style=" color: {{ $project->font_color }}" class="title is-4">{{ $project->name }}</p>
+                            <p style=" color: {{ $project->font_color }}" class="subtitle is-6">{{ $project->updated_at }}</p>
                         </div>
                     </div>
 
-                    <div class="content">
-                        {{ substr($project->description, 10) }}
+                    <div class="content" style=" color: {{ $project->font_color }}">
+                        {{ $project->description }}
                     </div>
                     <div class="buttons">
-                        <a class="button is-info" href="/project/{{ $project->id }}/NewTask">Přidat úkol</a>
-                        <a class="button is-warning" href="/project/{{ $project->id }}/edit">Upravit projekt</a>
+                        <a class="button is-info" href="/project/{{ $project->id }}/NewTask"><i class="fas fa-plus mr-2"></i>Přidat úkol</a>
+                        <a class="button is-warning" href="/project/{{ $project->id }}/edit"><i class="fas fa-edit mr-2"></i>Upravit projekt</a>
                         <form action="/project/{{ $project->id }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="button is-danger">Smazat projekt</button>
+                            <button type="submit" class="button is-danger"><i class="fas fa-trash mr-2"></i>Smazat projekt</button>
                         </form>
 
                     </div>
@@ -91,7 +98,21 @@
     </div>
 
 
-
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="{{ $project->image }}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 

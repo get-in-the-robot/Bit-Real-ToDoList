@@ -44,6 +44,45 @@
       <div class="field-body">
         <div class="field">
           <p class="control">
+            <input class="input" value="{{ $project->simage }}" name="simage" type="text" placeholder="Normal input">
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Barva</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
+            <input class="input" value="{{ $project->color }}" name="color" type="color" placeholder="Normal input">
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Barva textu</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
+            <input class="input" value="{{ $project->font_color }}" name="fcolor" type="color" placeholder="Normal input">
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Velký Obrázek</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
             <input class="input" value="{{ $project->image }}" name="image" type="text" placeholder="Normal input">
           </p>
         </div>

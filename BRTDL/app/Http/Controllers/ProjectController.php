@@ -17,9 +17,10 @@ class ProjectController extends Controller
         $nproject->name = $request->name;
         $nproject->description = $request->description;
         $nproject->image = $request->image;
-        $nproject->color = 1;
+        $nproject->color = $request->color;
         $nproject->public = false;
-        $nproject->symbol = 1;
+        $nproject->simage = $request->simage;
+        $nproject->font_color = $request->fcolor;
         $nproject->user = 1;
         $nproject->save();
 
@@ -47,8 +48,20 @@ class ProjectController extends Controller
         $project->name = $request->name;
         $project->description = $request->description;
         $project->image = $request->image;
+        $project->color = $request->color;
+        $project->simage = $request->simage;
+        $project->font_color = $request->fcolor;
         $project->save();
         return redirect('/project/'. $project->id);
+    }
+
+    public function Favorite(Project $project){
+        if($project->favorite == false)
+            $project->favorite =  true;
+        else
+            $project->favorite =  false;
+        $project->save();
+        return redirect('/');
     }
 
 }

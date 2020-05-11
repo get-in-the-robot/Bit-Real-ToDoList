@@ -46,12 +46,50 @@
         <div class="field-body">
           <div class="field">
             <p class="control">
-              <input class="input" name="image" type="text" placeholder="Normal input">
+              <input class="input" name="simage" type="text" placeholder="Normal input">
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Barva</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control">
+              <input class="input" value="#ffffff" name="color" type="color" placeholder="Normal input">
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Barva textu</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control">
+              <input class="input" value="#000000" name="fcolor" type="color" placeholder="Normal input">
             </p>
           </div>
         </div>
       </div>
   
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Velký Obrázek</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control">
+              <input class="input" name="image" type="text" placeholder="Normal input">
+            </p>
+          </div>
+        </div>
+      </div>
       
     <div class="text-center py-4 mt-3">
       <button class="button is-success" type="submit">Vytvořit projekt</button>

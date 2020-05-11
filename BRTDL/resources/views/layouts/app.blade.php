@@ -36,11 +36,11 @@
             <div id="navbarBasicExample" class="navbar-menu">
               <div class="navbar-start">
                 <a class="navbar-item" href="/">
-                  Hlavní stránka
+                  <i class="fas fa-home mr-2"></i> Hlavní stránka
                 </a>
           
               <a class="navbar-item" href="{{ route('news') }}">
-                  Novinky
+                <i class="fas fa-newspaper mr-2"></i>Novinky
                 </a>
           
                 
@@ -57,10 +57,11 @@
                         </a>
                 
                         <div class="navbar-dropdown">
-                          <a href="/NewProject" class="navbar-item">Nový projekt</a>
+                          <a href="/NewProject" class="navbar-item"><i class="fas fa-plus mr-2"></i>Nový projekt</a>
+                          <a href="/settings" class="navbar-item"><i class="fas fa-user-cog mr-2"></i>Nastavení</a>
                           <a class="navbar-item" href="{{ route('logout') }}"onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
-                                {{ __('Odhlásit se') }}
+                                <i class="fas fa-sign-out-alt mr-2"></i> {{ __('Odhlásit se') }}
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
@@ -90,7 +91,15 @@
                 @yield('content')
             
         </div>
+
+
+        
+
     </div>
+
+    
+
+    
 </body>
 
 </html>

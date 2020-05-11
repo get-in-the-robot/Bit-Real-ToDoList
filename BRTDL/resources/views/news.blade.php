@@ -5,6 +5,25 @@
 <div class="card">
   <header class="card-header">
     <p class="card-header-title">
+      v0.2
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      - Vylepšení designu <br>
+      - Přidán avatar <br>
+      - Lepší stránka projektu <br>
+      - Lepší vytváření projektu <br>
+      - Použití Bulmy místo MDB <br>
+      <time datetime="2020-4-5">6 May 2020</time>
+    </div>
+  </div>
+
+</div>
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
       v0.1
     </p>
   </header>

@@ -40,3 +40,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/news', 'HomeController@news')->name('news');
+
+Route::patch('/project/{project}/fav', 'ProjectController@favorite');
+
+Route::get('/settings', 'HomeController@Settings');
+
+Route::patch('/user/{user}', 'HomeController@Avatar');
