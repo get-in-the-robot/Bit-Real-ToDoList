@@ -46,3 +46,5 @@ Route::patch('/project/{project}/fav', 'ProjectController@favorite');
 Route::get('/settings', 'HomeController@Settings');
 
 Route::patch('/user/{user}', 'HomeController@Avatar');
+
+Route::get('/board', 'HomeController@Board')->name('board');

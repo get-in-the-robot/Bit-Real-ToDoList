@@ -27,6 +27,7 @@
         "@fortawesome/fontawesome-free": "^5.13.0",
         "bulma": "^0.8.2",
         "bulma-block-list": "^0.3.0",
-        "mdbvue": "^6.7.1"
+        "mdbvue": "^6.7.1",
+        "portal-vue": "^2.1.7"
     }
 }

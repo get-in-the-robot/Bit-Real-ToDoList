@@ -5,6 +5,26 @@
 <div class="card">
   <header class="card-header">
     <p class="card-header-title">
+      v0.3
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      - Vylepšení hlavní stránky <br>
+      - Tlačítko oblíbené <br>
+      - Menší obrázek projektu <br>
+      - Barva projektu <br>
+      - Změna avataru <br>
+      - Ikonky v navbaru a v projektu <br>
+      <time datetime="2020-4-5">11 May 2020</time>
+    </div>
+  </div>
+
+</div>
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
       v0.2
     </p>
   </header>

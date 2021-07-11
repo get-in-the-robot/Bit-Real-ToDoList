@@ -10882,13 +10882,17 @@ a.text-dark:focus {
   }
 }
 
-div#avatar {
+span#avatar {
   width: 2em;
   height: 2em;
   background-color: blueviolet;
   border-radius: 50%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.dropdown-toggle:after {
+  display: none !important;
 }
 
 html {

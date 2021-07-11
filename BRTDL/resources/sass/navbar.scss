@@ -1,4 +1,4 @@
-div#avatar {
+span#avatar {
     width: 2em;
     height: 2em;
     background-color: blueviolet;
@@ -6,3 +6,7 @@ div#avatar {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.dropdown-toggle:after {
+    display: none !important;
+   }

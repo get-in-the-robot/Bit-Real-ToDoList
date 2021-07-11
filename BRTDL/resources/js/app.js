@@ -4,19 +4,36 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+//require('./bootstrap');
 
-import '../sass/bulma_variables.scss';
+window.Vue = require('vue');
+
+require('mdbvue');
+
+//import '../sass/bulma_variables.scss';
+
+import 'bootstrap-css-only/css/bootstrap.min.css';
 
 require('@fortawesome/fontawesome-free/js/all');
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-import 'bulma/bulma.sass';
+/*import 'bulma/bulma.sass';
 
-import 'bulma-block-list/docs/demo.css';
+import 'bulma-block-list/docs/demo.css';*/
 
-window.Vue = require('vue');
+import 'mdbvue/lib/css/mdb.min.css'
+
+
+
+import * as mdbvue from 'mdbvue'
+for (const component in mdbvue) {
+  Vue.component(component, mdbvue[component])
+}
+
+import PortalVue from 'portal-vue'
+Vue.use(PortalVue)
+
 
 
 /**

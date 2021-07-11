@@ -68,5 +68,11 @@ class HomeController extends Controller
         return redirect('/settings');
     }
 
+    public function board(){
+        return view('board', [
+            'user' => User::where('id', Auth::id())->get()->first()
+        ]);
+    }
+
     
 }
